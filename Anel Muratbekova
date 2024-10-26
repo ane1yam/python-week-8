@@ -1,0 +1,157 @@
+Task 1. Lists
+1.1
+Code: 
+user_input = input("Enter a string: ")
+
+result_list = [char.lower() for char in user_input]
+
+print("Created list is:")
+print(result_list)
+
+
+
+1.2 
+ Code: 
+input_list = [('p', 2), ('u', 1), ('l', 1), (' ', 1), ('f', 1), ('i', 2), ('c', 1), ('t', 1), ('o', 1), ('n', 1)]
+
+vowels = {'a', 'e', 'i', 'o', 'u'}
+
+list_vow = []
+list_cons = []
+list_sym = []
+
+for char, count in input_list:
+    if char in vowels:
+        list_vow.append((char, count))
+    elif char.isalpha():  
+        list_cons.append((char, count))
+    else: 
+        list_sym.append((char, count))
+
+print("list_vow =", list_vow)
+print("list_cons =", list_cons)
+print("list_sym =", list_sym)
+
+ 
+ 
+
+
+Task 2. Dictionaries
+2.1  Code: 
+student_name = "Mika"
+assignment_scores = [85, 76, 64, 50]
+lab_scores = [45.20, 89.20]
+test_scores = [65, 87]
+
+student = {
+    'name': student_name,
+    'assignment': assignment_scores,
+    'lab': lab_scores,
+    'test': test_scores
+}
+
+print("student =", student)
+
+ 
+
+
+2.2 Code:
+student = {
+    'name': 'Mika',
+    'assignment': [85, 76, 64, 50],
+    'lab': [45.20, 89.20],
+    'test': [65, 87]
+}
+
+submission_count = 0
+
+submission_count += len(student['assignment'])   
+submission_count += len(student['lab'])         
+submission_count += len(student['test'])       
+
+submission_check = {student['name']: submission_count}
+
+print(submission_check) 
+ 
+
+
+
+2.3 Code:
+student = {
+    'name': 'Adam',
+    'assignment': [85, 76, 64, 50],
+    'test': [65, 87],
+    'lab': [45.20, 89.20]
+}
+
+submission_rate = {'Adam': 6}
+
+if submission_rate[student['name']] >= 4:
+    avg_assignment = sum(student['assignment']) / len(student['assignment'])
+    avg_lab = sum(student['lab']) / len(student['lab'])
+    avg_test = sum(student['test']) / len(student['test'])
+    final_grade = (0.3 * avg_assignment) + (0.5 * avg_lab) + (0.2 * avg_test)
+else:
+    final_grade = 0
+
+student['final_grade'] = final_grade
+
+print(student)
+
+student2 = {
+    'name': 'Tom',
+    'assignment': [79, 40],
+    'test': [],
+    'lab': [89.5]
+}
+
+submission_rate = {'Mika': 6, 'Tom': 3}
+
+if submission_rate[student2['name']] >= 4:
+    avg_assignment = sum(student2['assignment']) / len(student2['assignment']) if student2['assignment'] else 0
+    avg_lab = sum(student2['lab']) / len(student2['lab']) if student2['lab'] else 0
+    avg_test = sum(student2['test']) / len(student2['test']) if student2['test'] else 0
+    
+    final_grade = (0.3 * avg_assignment) + (0.5 * avg_lab) + (0.2 * avg_test)
+else:
+    final_grade = 0
+
+student2['final_grade'] = final_grade
+
+print(student2)
+
+ 
+2.4 
+
+student = {
+    'name': 'Mika',
+    'assignment': [85, 76, 64, 50],
+    'test': [65, 87],
+    'lab': [45.20, 89.20],
+    'final_grade': 70.25
+}
+
+student2 = {
+    'name': 'Tom',
+    'assignment': [79, 40],
+    'test': [],
+    'lab': [89.5],
+    'final_grade': 0
+}
+
+students = {
+    student['name']: {
+        'assignment': student['assignment'],
+        'test': student['test'],
+        'lab': student['lab'],
+        'final_grade': student['final_grade']
+    },
+    student2['name']: {
+        'assignment': student2['assignment'],
+        'test': student2['test'],
+        'lab': student2['lab'],
+        'final_grade': student2['final_grade']
+    }
+}
+
+print(students)
