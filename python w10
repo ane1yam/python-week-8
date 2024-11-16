@@ -1,0 +1,91 @@
+1. 
+
+def is_palindrome(s):
+    s = s.replace(" ", "").lower()
+    return s == s[::-1]
+
+test_string = input("Введите строку для проверки: ")
+if is_palindrome(test_string):
+    print("Это палиндром.")
+else:
+    print("Это не палиндром.")
+
+
+
+2.
+
+def convert_seconds(seconds):
+    days = seconds // 86400
+    seconds %= 86400
+    hours = seconds // 3600
+    seconds %= 3600
+    minutes = seconds // 60
+    seconds %= 60
+    return f"{days}:{hours:02}:{minutes:02}:{seconds:02}"
+
+input_seconds = int(input("Введите количество секунд: "))
+print("Результат:", convert_seconds(input_seconds))
+
+
+3.
+
+input_numbers = input("Введите числа, разделенные запятой: ")
+num_list = input_numbers.split(",")
+num_tuple = tuple(num_list)
+
+print("Список:", num_list)
+print("Кортеж:", num_tuple)
+
+
+4.
+
+def print_first_last(lst):
+    if lst:
+        print("Первый элемент:", lst[0])
+        print("Последний элемент:", lst[-1])
+
+example_list = [1, 2, 3, 4, 5]
+print_first_last(example_list)
+
+
+5.
+
+def get_file_extension(filename):
+    try:
+        extension = filename.split(".")[-1]
+        if extension == filename:  
+            raise ValueError("Расширение определить невозможно")
+        print("Расширение файла:", extension)
+    except ValueError as e:
+        print(e)
+
+file_name = input("Введите имя файла: ")
+get_file_extension(file_name)
+
+
+6.
+
+def compute_n_series(n):
+    n_str = str(n)
+    nn = int(n_str * 2)
+    nnn = int(n_str * 3)
+    return n + nn + nnn
+
+
+n = int(input("Введите число n: "))
+print("Результат вычисления n + nn + nnn:", compute_n_series(n))
+
+7.
+
+def print_even_until_237(numbers):
+    for num in numbers:
+        if num == 237:
+            print(num)
+            break
+        if num % 2 == 0:
+            print(num)
+
+
+example_list = [10, 23, 42, 55, 237, 88, 91]
+print_even_until_237(example_list)
+
