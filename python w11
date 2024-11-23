@@ -1,0 +1,48 @@
+1. def elements_not_in_second(list1, list2):
+    return [item for item in list1 if item not in list2]
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 6, 7, 8]
+print(elements_not_in_second(list1, list2))
+
+2. import os
+
+
+files = os.listdir('C:/Users/Admin/Desktop')  
+print(files) 
+
+
+3. def sum_of_digits(number):
+    return sum(int(digit) for digit in str(abs(number)))
+
+number = 12345
+print(sum_of_digits(number))
+
+4. def count_character_occurrences(string, char):
+    return string.count(char)
+
+
+string = "hello world"
+char = "o"
+print(count_character_occurrences(string, char))
+
+5. a = 1
+b = 2
+
+a, b = b, a
+
+print(a, b)
+
+
+
+6. 
+numbers = [15, 30, 45, 60, 22, 7, 90]
+divisible_by_15 = list(filter(lambda x: x % 15 == 0, numbers))
+print(divisible_by_15)
+
+7. def are_all_numbers_unique(sequence):
+    return len(sequence) == len(set(sequence))
+
+
+sequence = [1, 2, 3, 4, 5]
+print(are_all_numbers_unique(sequence))
